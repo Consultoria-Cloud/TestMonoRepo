@@ -8,7 +8,7 @@ jobs:
     name: Deploy Lambdas
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: 14.x
+      NODE_VERSION: 18.x
     strategy:
       matrix:
         python-version:
