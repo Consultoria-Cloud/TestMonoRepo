@@ -20,5 +20,5 @@ functions:
     memorySize: 128
     package:
       patterns:
-        - '!src/**''
+        - '!src/**'
         - 'src/TestLambda1/**'
