@@ -14,7 +14,7 @@ package:
 functions:
   theLambda:
     name: TestLambda
-    handler: lambda_function.lambda_handler
+    handler: src.TestLambda1.lambda_function.lambda_handler
     description: Lambda para teste
     timeout: 5 
     memorySize: 128
