@@ -1,0 +1,24 @@
+service: basic-serverless-lambda-python
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-west-1
+
+plugins:
+  - serverless-python-requirements
+
+package:
+  individually: true
+
+functions:
+  theLambda:
+    name: TestLambda
+    handler: lambda.handler
+    description: Lambda para teste
+    timeout: 5 
+    memorySize: 128
+    package:
+      patterns:
+        - "./TestLambda1"
