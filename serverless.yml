@@ -21,4 +21,4 @@ functions:
     package:
       patterns:
         - '!src/**''
-        - src/TestLambda1/*
+        - 'src/TestLambda1/**'
