@@ -1,5 +1,7 @@
 service: basic-serverless-lambda-python
 
+frameworkVersion: '3'
+
 provider:
   name: aws
   runtime: python3.8
