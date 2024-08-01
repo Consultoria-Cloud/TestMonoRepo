@@ -34,4 +34,4 @@ functions:
     package:
       patterns:
         - '!src/**'
-        - 'src/TestLambda2/**'        
+        - 'src/TestLambda2/**'
