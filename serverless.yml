@@ -3,11 +3,15 @@ service: basic-serverless-lambda-python
 
 frameworkVersion: '3'
 
-provider:
+provider: # Usado para definições padrões
   name: aws
   runtime: python3.8
   stage: dev
   region: us-east-1
+  iam:
+    role: 
+      - arn:aws:iam::009160056575:policy/service-role/AWSLambdaBasicExecutionRole-8ac6bb60-364a-4368-b82f-133c2bc162bd
+      - arn:aws:iam::009160056575:policy/service-role/AWSLambdaVPCAccessExecutionRole-12848a21-c175-4804-8900-1f517e6abda2
 
 package:
   individually: true
@@ -18,33 +22,21 @@ functions:
     name: TestLambda1
     handler: src/TestLambda1/lambda_function.lambda_handler
     description: Lambda para teste
-    runtime: python3.11
+    runtime: python3.11 # Se não setado, usa a versão definida no provider
     timeout: 10 
     memorySize: 128
+    vpc: # Pode ser definido a nível de provider
+      securityGroupIds:
+        - sg-0700b55a797d37a8d
+      subnetIds:
+        - subnet-078934f890f6bf5c7
+        - subnet-0093353f67060566b
     package:
       patterns:
         - '!src/**'
         - 'src/TestLambda1/**'
         - 'src/libs/lib1/**'
-
-  theLambda2:
-    name: TestLambda2
-    handler: src/TestLambda2/lambda_function.lambda_handler
-    description: Lambda para teste
-    timeout: 5 
-    memorySize: 128
-    package:
-      patterns:
-        - '!src/**'
-        - 'src/TestLambda2/**'
-
-  theLambda3:
-    name: TestLambda3
-    handler: src/TestLambda2/lambda_function.lambda_handler
-    description: Lambda para teste
-    timeout: 5 
-    memorySize: 128
-    package:
-      patterns:
-        - '!src/**'
-        - 'src/TestLambda3/**'
+    environment:
+      CHAVE: valor
+    #layers:
+    #  - arn:aws:lambda:region:XXXXXX:layer:LayerName:Y
