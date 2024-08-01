@@ -1,6 +1,6 @@
 import json
 
-def lib1 (event, context):
+def lib1 ():
     # TODO implement
     return {
         'statusCode': 200,

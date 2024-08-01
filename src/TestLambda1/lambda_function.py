@@ -1,5 +1,5 @@
 import json
-from libs.lib1 import lib1
+from src.libs.lib1.lib1 import lib1
 
 def lambda_handler(event, context):
     # TODO implement
