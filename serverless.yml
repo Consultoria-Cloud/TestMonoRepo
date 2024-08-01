@@ -8,10 +8,6 @@ provider: # Usado para definições padrões
   runtime: python3.8
   stage: dev
   region: us-east-1
-  iam:
-    role: 
-      - arn:aws:iam::009160056575:policy/service-role/AWSLambdaBasicExecutionRole-8ac6bb60-364a-4368-b82f-133c2bc162bd
-      - arn:aws:iam::009160056575:policy/service-role/AWSLambdaVPCAccessExecutionRole-12848a21-c175-4804-8900-1f517e6abda2
 
 package:
   individually: true
