@@ -4,5 +4,5 @@ def lambda_handler(event, context):
     # TODO implement
     return {
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda 2! Version v1.0.0')
+        'body': json.dumps('Hello from Lambda 2! Version v2.0.0')
     }
