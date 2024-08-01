@@ -24,7 +24,7 @@ functions:
       patterns:
         - '!src/**'
         - 'src/TestLambda1/**'
-        - 'src/Lib1/**'
+        - 'src/libs/lib1/**'
 
   theLambda2:
     name: TestLambda2
