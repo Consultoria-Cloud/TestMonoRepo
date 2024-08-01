@@ -12,7 +12,7 @@ package:
   individually: true
 
 functions:
-  theLambda:
+  theLambda1:
     name: TestLambda1
     handler: src/TestLambda1/lambda_function.lambda_handler
     description: Lambda para teste
@@ -24,7 +24,7 @@ functions:
         - 'src/TestLambda1/**'
 
 functions:
-  theLambda:
+  theLambda2:
     name: TestLambda2
     handler: src/TestLambda2/lambda_function.lambda_handler
     description: Lambda para teste
