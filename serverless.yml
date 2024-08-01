@@ -42,6 +42,6 @@ functions:
     #  - arn:aws:lambda:region:XXXXXX:layer:LayerName:Y
     events:
       - http:
-        path: users
-        method: put
-        cors: true
+          path: users
+          method: put
+          cors: true
