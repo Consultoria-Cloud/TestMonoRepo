@@ -25,13 +25,13 @@ functions:
         - '!src/**'
         - 'src/TestLambda1/**'
 
-  theLambda2:
-    name: TestLambda2
-    handler: src/TestLambda2/lambda_function.lambda_handler
-    description: Lambda para teste
-    timeout: 5 
-    memorySize: 128
-    package:
-      patterns:
-        - '!src/**'
-        - 'src/TestLambda2/**'
+  # theLambda2:
+  #   name: TestLambda2
+  #   handler: src/TestLambda2/lambda_function.lambda_handler
+  #   description: Lambda para teste
+  #   timeout: 5 
+  #   memorySize: 128
+  #   package:
+  #     patterns:
+  #       - '!src/**'
+  #       - 'src/TestLambda2/**'
