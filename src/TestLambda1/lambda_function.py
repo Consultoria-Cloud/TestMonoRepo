@@ -1,4 +1,5 @@
 import json
+from libs.lib1 import lib1
 
 def lambda_handler(event, context):
     # TODO implement
@@ -7,4 +8,4 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello from Lambda 1! Version v1.0.0')
     }
 
-lib1 (event, context)
+lib1 ()
