@@ -4,6 +4,10 @@ service: basic-serverless-lambda-python
 frameworkVersion: '3'
 
 provider: # Usado para definições padrões
+  apiGateway:
+    restApiId: t4arkza3cd
+    restApiRootResourceId: hy4baf14k4
+    apiKeySourceType: HEADER
   name: aws
   runtime: python3.8
   stage: dev
@@ -36,3 +40,8 @@ functions:
       CHAVE: valor
     #layers:
     #  - arn:aws:lambda:region:XXXXXX:layer:LayerName:Y
+    events:
+      - http:
+        path: users/create
+        method: put
+        cors: true
