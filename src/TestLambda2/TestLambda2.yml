@@ -1,0 +1,47 @@
+# Nome do grupo de lambdas ou Lambda em caso de compor apenas uma. Esta chave-valor dará o nome para a Stack do CloudFormation
+service: basic-serverless-lambda-python
+
+frameworkVersion: '3'
+
+provider: # Usado para definições padrões
+  apiGateway:
+    restApiId: t4arkza3cd
+    restApiRootResourceId: hy4baf14k4
+    apiKeySourceType: HEADER
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+
+package:
+  individually: true
+
+functions:
+
+  theLambda1:
+    name: TestLambda2
+    handler: src/TestLambda2/lambda_function.lambda_handler
+    description: Lambda para teste
+    runtime: python3.11 # Se não setado, usa a versão definida no provider
+    timeout: 10 
+    memorySize: 128
+    vpc: # Pode ser definido a nível de provider
+      securityGroupIds:
+        - sg-0700b55a797d37a8d
+      subnetIds:
+        - subnet-078934f890f6bf5c7
+        - subnet-0093353f67060566b
+    package:
+      patterns:
+        - '!src/**'
+        - 'src/TestLambda2/**'
+        - 'src/libs/lib1/**'
+    environment:
+      CHAVE: valor
+    #layers:
+    #  - arn:aws:lambda:region:XXXXXX:layer:LayerName:Y
+    events:
+      - http:
+          path: login
+          method: put
+          cors: true
